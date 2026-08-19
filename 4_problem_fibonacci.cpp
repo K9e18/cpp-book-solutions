@@ -3,6 +3,7 @@
 int main() {
     int limit;
     std::cin >> limit;
+    limit -= 2;
 
     int counter = 0;
     int next_num;
