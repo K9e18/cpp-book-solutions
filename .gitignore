@@ -1,3 +1,8 @@
+# Ignore compiled executables (files without an extension)
 *
-!*.cpp
+!*/
+!*.*
+
+# Keep ignoring hidden system files except git configurations
 !.gitignore
+
