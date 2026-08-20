@@ -1,3 +1,6 @@
+// Formule 
+// ln(1 + x) ≈ x - (x^2 / 2) + (x^3 / 3) - (x^4 / 4) + ... + ((-1)^(n+1) x^n) / n
+
 #include <iostream>
 #include <cmath> // Required for std::log
 
@@ -10,7 +13,9 @@ double absolute_value(double num) {
 }
 
 // Custom function to calculate ln(1 + x) using Taylor series
-double custom_log(double x, double epsilon) {
+double custom_log(double x) {
+    const double epsilon = 0.0000000001;
+
     double sum = 0.0;
     double step = 1.0;
     double sign = 1.0;
@@ -35,14 +40,13 @@ double custom_log(double x, double epsilon) {
 
 int main() {
     double num;
-    const double epsilon = 0.0000000001;
     
     // User input
     std::cout << "Enter x (between -1 and 1): ";
     std::cin >> num;
 
     // 1. Calculation using your custom method
-    double my_result = custom_log(num, epsilon);
+    double my_result = custom_log(num);
     std::cout << "\nYour custom_log(1 + " << num << "): " << my_result << std::endl;
 
     // 2. Calculation using the standard library
